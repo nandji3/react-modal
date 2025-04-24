@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom";
 import { useEffect } from "react";
+import { AiOutlineClose } from "react-icons/ai";
 
 const modalRoot = document.getElementById("modal-root");
 
@@ -15,19 +16,18 @@ const Modal = ({ isOpen, onClose, children }) => {
 
     return ReactDOM.createPortal(
         <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-[0.05]"
+            className="fixed inset-0 z-50 flex items-center justify-center"
             onClick={onClose}
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
         >
             <div
-                className="relative bg-white p-6 rounded shadow-lg w-full max-w-lg max-h-[80vh] overflow-y-auto"
+                className="relative bg-white p-6 rounded shadow-lg w-full max-w-lg max-h-[80vh] overflow-y-auto scroll-smooth"
                 onClick={(e) => e.stopPropagation()}
             >
-                <button
-                    className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 cursor-pointer text-2xl"
-                    onClick={onClose}
+                <div className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 cursor-pointer text-2xl"
                 >
-                    X
-                </button>
+                    <AiOutlineClose onClick={onClose} />
+                </div>
                 {children}
             </div>
         </div>,
