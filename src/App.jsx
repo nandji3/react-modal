@@ -3,6 +3,10 @@ import Counter from "./components/Counter/Counter";
 import RootLoader from "./components/Loader/RootLoader";
 import Modal from "./components/Modal/Modal";
 import { useModal } from "./components/Modal/useModal";
+import { Routes, Route } from 'react-router-dom';
+import LoginPage from "./pages/LoginPage";
+
+
 
 function App() {
   const { isOpen, openModal, closeModal } = useModal();
@@ -15,6 +19,9 @@ function App() {
 
   return (
     <>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+      </Routes>
       <div className="min-h-screen flex flex-col items-center justify-center gap-4">
         <button
           onClick={openModal}
@@ -36,8 +43,9 @@ function App() {
           </button>
         </Modal>
       </div>
-      <RootLoader isLoading={loading} />
       <Counter />
+
+      <RootLoader isLoading={loading} />
     </>
   );
 }
