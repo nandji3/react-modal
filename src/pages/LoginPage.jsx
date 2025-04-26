@@ -1,6 +1,5 @@
 import LoginForm from "../components/LoginForm/LoginForm";
-// import loginBg from '../assets/login-bg.jpg';
-import loginBg from '../assets/bg-imag2.png';
+import loginBg from '../assets/login-bg.jpg';
 
 const LoginPage = () => {
     return (
