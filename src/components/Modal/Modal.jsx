@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import { useEffect } from "react";
-import { AiOutlineClose } from "react-icons/ai";
+import { IoClose } from "react-icons/io5";
 
 const modalRoot = document.getElementById("modal-root");
 
@@ -21,12 +21,12 @@ const Modal = ({ isOpen, onClose, children }) => {
             style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
         >
             <div
-                className="relative bg-white p-6 rounded shadow-lg w-full max-w-lg max-h-[80vh] overflow-y-auto scroll-smooth"
+                className="relative bg-white rounded-md overflow-hidden shadow-lg w-full md:max-w-lg"
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 cursor-pointer text-2xl"
+                <div className="absolute top-2 right-2  cursor-pointer text-2xl transition-all ease-in duration-200 bg-teal-600 hover:bg-teal-700 p-[0.3rem] rounded-full"
                 >
-                    <AiOutlineClose onClick={onClose} />
+                    <IoClose onClick={onClose} className="text-white text-[1.1rem] " />
                 </div>
                 {children}
             </div>

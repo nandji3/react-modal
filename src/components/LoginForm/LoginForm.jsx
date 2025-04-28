@@ -85,9 +85,9 @@ const LoginForm = () => {
             {/* Login Button */}
             <button
                 type="submit"
-                className="w-full rounded-md bg-teal-500 px-4 py-2 text-white transition hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-300"
+                className="w-full  rounded-md bg-teal-500 px-4 py-2 text-white transition hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-300 text-[0.85rem] cursor-pointer font-semibold tracking-wider block mx-auto"
             >
-                Log In
+                Show Modal
             </button>
 
             {/* Forgot Password */}

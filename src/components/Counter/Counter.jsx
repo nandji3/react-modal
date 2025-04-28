@@ -39,9 +39,9 @@ const Counter = () => {
     return (
         <div className='w-full min-h-[100vh] flex justify-center items-center gap-[2rem]'>
 
-            <button className="bg-black text-white px-[1rem] py-[0.2rem]" onClick={handleDec}>-</button>
+            <button className="bg-teal-500 hover:bg-teal-600 text-white px-[0.8rem] py-[0.15rem] rounded-sm cursor-pointer transition-all ease-in duration-200 text-[1.2rem]" onClick={handleDec}>-</button>
             <h1>{count}</h1>
-            <button className="bg-black text-white px-[1rem] py-[0.2rem]" onClick={handleIncr}>+</button>
+            <button className="bg-teal-500 hover:bg-teal-600 text-white px-[0.8rem] py-[0.15rem] rounded-sm cursor-pointer transition-all ease-in duration-200 text-[1.2rem]" onClick={handleIncr}>+</button>
         </div>
     )
 }
