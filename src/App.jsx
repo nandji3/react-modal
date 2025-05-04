@@ -7,10 +7,15 @@ import { Routes, Route } from 'react-router-dom';
 import LoginPage from "./pages/LoginPage";
 import A from "./components/ParentChild/A";
 import ReactForm from "./components/Form/ReactForm";
+import { useSelector } from "react-redux";
+import Login from "./pages/Login";
+import Welcome from "./pages/Welcome";
 
 
 
 function App() {
+  const { user, status } = useSelector(state => state.auth);
+
   const { isOpen, openModal, closeModal } = useModal();
   const [loading, setLoading] = useState(true);
 
@@ -19,14 +24,22 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+
+
   return (
     <>
       <Routes>
         <Route path="/" element={<LoginPage />} />
       </Routes>
       <A />
-      <div className="min-h-screen flex flex-col items-center justify-center gap-4">
 
+      <div>
+        {status === 'pending' && <p>Logging in…</p>}
+        {!user && <Login />}
+        {user && <Welcome />}
+      </div>
+
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4">
         <button
           onClick={openModal}
           className="rounded-md bg-teal-500 px-4 py-2 text-white transition hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-300 text-[0.85rem] cursor-pointer font-semibold tracking-wider block mx-auto"
